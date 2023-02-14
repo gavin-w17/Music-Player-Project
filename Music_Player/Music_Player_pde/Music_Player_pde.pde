@@ -10,21 +10,30 @@ Minim minim;
 AudioPlayer song0, song1, song2, song3, song4, song5, song6, song7;
 AudioPlayer soundEffect0, soundEffect1;
 //
-Boolean firstMouseclick=false;
+Boolean activateWindow=false;
 //
 void setup() {
   size(300, 300);
   loadMusic();
   song0.loop(0);
-  soundEffect0.loop(0);
+  //soundEffect0.loop(0);
 } //End setup
 //
 void draw() {
-  if ( firstMouseclick == true ) background(0);
+  if ( activateWindow == true ) background(0);
+  //
+  //Debugging the Effective Length of the Sound Effect to code a delay
+  printIn ( soundEffect0.position(), soundEffect0.length() );
+  printIn ("When does the sound stop? Indicates delay");
 } //End draw
 //
 void keyPressed() {
   //
+  //Play sound effect when pressing a key, including delay
+  soundEffect0.play(0);
+  soundEffect0.rewind();
+  delay(4000); //milliseconds read from draw() printIn() debugging
+  printIn( "KeyPressed:", soundEffect0.length() );
   if ( key=='0' )song0.loop(0);
   if (key=='Q' || key=='q') exit();
   if ( key==CODED && key==ESC ) exit(); 
@@ -32,7 +41,7 @@ void keyPressed() {
 } //End keyPressed 
 //
 void mousePressed() { 
-  if ( firstMouseclick==false ) firstMouseclick = true;
+  if ( activateWindow==false ) activateWindow = true;
 } //End mousePressed
 //
 //End MAIN Program
