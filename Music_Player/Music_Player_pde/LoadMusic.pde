@@ -1,4 +1,5 @@
 void loadMusic() {
+  //
   minim = new Minim(this);
   //
   //Concatenation of Pathway + File Name
@@ -24,5 +25,7 @@ void loadMusic() {
   song7 = minim.loadFile( musicPathway + beatyourcompetitionFileName );
   soundEffect0 = minim.loadFile( soundEffectPathway + doorFileName );
   soundEffect1 = minim.loadFile( soundEffectPathway + thesimpleststingFileName );
+  //
+  //printIn("Music Pathway is", musicPathway);
 }//End loadMusic
   

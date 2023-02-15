@@ -15,30 +15,41 @@ Boolean activateWindow=false;
 void setup() {
   size(300, 300);
   loadMusic();
-  song0.loop(0);
-  //soundEffect0.loop(0);
+  //
+  //Illustrate Garbage Collection of Local Variable
+  //printIn("Music Pathway is", musicPathway); //local variable doesn't exit outside of void loadMusic() {}
+  //
 } //End setup
 //
 void draw() {
   if ( activateWindow == true ) background(0);
   //
   //Debugging the Effective Length of the Sound Effect to code a delay
-  printIn ( soundEffect0.position(), soundEffect0.length() );
-  printIn ("When does the sound stop? Indicates delay");
+  //println ( soundEffect0.position(), soundEffect0.length() );
+  //println ("When does the sound stop? Indicates delay");
+  // Debugging a sound to shorten a file play
+   println( soundEffect1.position(), soundEffect1.length() );
+  //
 } //End draw
 //
 void keyPressed() {
   //
   //Play sound effect when pressing a key, including delay
-  soundEffect0.play(0);
+  soundEffect0.play();
   soundEffect0.rewind();
   delay(4000); //milliseconds read from draw() printIn() debugging
-  printIn( "KeyPressed:", soundEffect0.length() );
-  if ( key=='0' )song0.loop(0);
-  if (key=='Q' || key=='q') exit();
-  if ( key==CODED && key==ESC ) exit(); 
+  //printIn( "KeyPressed:", soundEffect0.length() );
   //
-} //End keyPressed 
+  keyPressedShortCuts();
+  //
+  //Quit Button Key Board Shortcut
+  if ( key== 'Q' || key == 'q' ) {
+    int time = 7000;
+    soundEffect1.play(time); //only need partial file, use milliseconds
+    soundEffect1.rewind();
+  }
+  //
+} //End keyPressed
 //
 void mousePressed() { 
   if ( activateWindow==false ) activateWindow = true;
