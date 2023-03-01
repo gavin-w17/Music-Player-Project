@@ -1,4 +1,7 @@
 //Global Variables
+float buttonReferentMeasure;
+float buttonSide, spaceWidth, spaceHeight;
+float pauseX1, pauseY1, pauseX2, pauseY2, pauseWidth;
 //
 void setup() {
   //Display
@@ -6,7 +9,21 @@ void setup() {
   fullScreen(); //displayWidth, displayHeight
   //
   //Population: visual data
+  buttonReferentMeasure = width * 1/8;
+  buttonSide = buttonReferentMeasure;
+  spaceWidth = buttonReferentMeasure * 1/4;
+  spaceHeight = buttonReferentMeasure * 1/4;
   //
+  float centerX = width * 1/2;
+  float centerY = height * 1/2;
+  print("Confirming Center X:", centerX);
+  println("/t Confirming Center Y:", centerY);
+  //
+  pauseX1 = centerX - buttonReferentMeasure*1/2;
+  pauseY1 = centerY - buttonReferentMeasure*1/2;
+  pausewidth =
+  pauseX2 =
+  pauseY2 = pauseY1
 } //End setup
 //
 void draw() {
@@ -23,9 +40,9 @@ void draw() {
   //rect( X, Y, Side, side ); //Square shape
   //
   //Pause Button
-  rect( X, Y, Width, Height ); //Layout
-  rect( X, Y, Width, Height );
-  rect( X, Y, Width, Height );
+  //rect( pauseX1, pauseY1, buttonSide, buttonSide ); //Layout
+  rect( pauseX1, pauseY1, pauseWidth, buttonSide );
+  rect( pauseX2, pauseY2, pauseWidth, buttonSide );
   //
   //Play Button
   rect( X, Y, Width, Height ); //Layout
