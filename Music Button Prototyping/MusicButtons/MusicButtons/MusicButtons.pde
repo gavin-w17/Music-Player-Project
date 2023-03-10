@@ -25,7 +25,7 @@ void setup() {
   //Population: visual data
   buttonReferentMeasure = width * 1/8;
   buttonSide = buttonReferentMeasure;
-  spaceWidth = buttonReferentMeasure * 1/3;
+  spaceWidth = buttonReferentMeasure * 1/4;
   //
   float centerX = width * 1/2;
   float centerY = height * 1/2;
@@ -140,7 +140,7 @@ void draw() {
   //
   //Pause Button
   rect( pauseX1, pauseY1, pauseWidth, buttonSide );
-  rect( pauseX2, pauseY2, pauseWidth, buttonSide );
+  rect( pauseX2*1.03, pauseY2, pauseWidth, buttonSide );
   //rect( pauseX1, pauseY2, pauseWidth, buttonSide ); layout
   //
   //Play Button
