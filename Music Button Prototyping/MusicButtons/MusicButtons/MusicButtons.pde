@@ -15,6 +15,7 @@ float nextX1, nextY1, nextX2, nextY2, nextX3, nextY3, nextWidth;
 float prevX1, prevY1, prevX2, prevY2, prevX3, prevY3, prevWidth;
 float loop1WidthDiameter, loop1HeightDiameter, loopX1, loopY1;
 float loop1X1, loop1X2, loop1X3, loop1Y1, loop1Y2, loop1Y3;
+float loopIWidthDiameter, loopIHeightDiameter, loopIX1, loopIX2, loopIX3, loopIY1, loopIY2, loopIY3;
 //
 void setup() {
   //Display
@@ -54,7 +55,7 @@ void setup() {
   muteY2 = muteY + (muteY3 - muteY) * 1/2;
   //
   loopIX = pauseX1;
-  loopIY = pauseY1 + ( buttonPositionRow + buttonReferentMeasure );
+  loopIY = pauseY1 + ( buttonPositionRow * buttonReferentMeasure );
   //
   buttonPositionColumn = 1;
   ffX1A = pauseX1 + ( buttonPositionColumn*buttonReferentMeasure );
@@ -89,7 +90,7 @@ void setup() {
   nextX = pauseX1 + ( buttonPositionColumn*buttonReferentMeasure );
   nextY = pauseY1;
   nextWidth = buttonReferentMeasure * 1/4;
-  nextX1 = centerY + ( buttonPositionColumn*buttonReferentMeasure );
+  nextX1 = centerY + ( buttonPositionColumn*buttonReferentMeasure )*1.04;
   nextY1 = pauseY1;
   nextX3 = nextX1;
   nextY3 = nextY1 + buttonReferentMeasure;
@@ -148,7 +149,7 @@ void draw() {
   //
   //Mute Button
   //rect( muteX, muteY, buttonSide, buttonSide ); //Layout
-triangle( muteX, muteY, muteX2, muteY2, muteX3, muteY3 );
+  triangle( muteX, muteY, muteX2, muteY2, muteX3, muteY3 );
   //students to develop
   //
   //Fast Forward in the song
@@ -181,9 +182,9 @@ triangle( muteX, muteY, muteX2, muteY2, muteX3, muteY3 );
   //Loop the song infinitely
   //students to develop
   rect( loopIX, loopIY, buttonSide, buttonSide ); //layout
-  //ellipse( loopIX, loopIY, loopIWidthDiameter, loopIHeightDiameter );
-  //ellipse( loopIX, loopIY, loopIWidthDiameter, loopIHeightDiameter );
-  //triangle( loopIx1, loopIY1, loopIX2, loopY2, loopIX3, loopIY3 );
+  //ellipse( loopIX1, loopIY1, loopIWidthDiameter, loopIHeightDiameter );
+  ellipse( loopIX, loopIY, loopIWidthDiameter, loopIHeightDiameter );
+  //triangle( loopIX1, loopIY1, loopIX2, loopY2, loopIX3, loopIY3 );
   //loop the playlist infinitely
   //Students to Develop
   rect( loopPlaylistX, loopPlaylistY, buttonSide, buttonSide ); //layout
