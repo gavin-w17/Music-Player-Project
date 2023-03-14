@@ -56,6 +56,9 @@ void setup() {
   //
   loopIX = pauseX1;
   loopIY = pauseY1 + ( buttonPositionRow * buttonReferentMeasure );
+  loopIX1 = centerX - ( buttonReferentMeasure*buttonPositionRow );
+  loopIWidthDiameter = buttonReferentMeasure;
+  loopIHeightDiameter = buttonReferentMeasure;
   //
   buttonPositionColumn = 1;
   ffX1A = pauseX1 + ( buttonPositionColumn*buttonReferentMeasure );
@@ -181,9 +184,9 @@ void draw() {
   //
   //Loop the song infinitely
   //students to develop
-  rect( loopIX, loopIY, buttonSide, buttonSide ); //layout
-  //ellipse( loopIX1, loopIY1, loopIWidthDiameter, loopIHeightDiameter );
-  ellipse( loopIX, loopIY, loopIWidthDiameter, loopIHeightDiameter );
+  //rect( loopIX, loopIY, buttonSide, buttonSide ); //layout
+  ellipse( loopIX + 10, loopIY + 44, loopIWidthDiameter, loopIHeightDiameter );
+  ellipse( loopIX + 69, loopIY + 44, loopIWidthDiameter, loopIHeightDiameter );
   //triangle( loopIX1, loopIY1, loopIX2, loopY2, loopIX3, loopIY3 );
   //loop the playlist infinitely
   //Students to Develop
