@@ -16,6 +16,7 @@ float prevX1, prevY1, prevX2, prevY2, prevX3, prevY3, prevWidth;
 float loop1WidthDiameter, loop1HeightDiameter, loopX1, loopY1;
 float loop1X1, loop1X2, loop1X3, loop1Y1, loop1Y2, loop1Y3;
 float loopIWidthDiameter, loopIHeightDiameter, loopIX1, loopIX2, loopIX3, loopIY1, loopIY2, loopIY3;
+float loopPlaylistX1, loopPlaylistX2, loopPlaylistX3, loopPlaylistY1, loopPlaylistY2, loopPlaylistY3, loopPlaylistWidth;
 //
 void setup() {
   //Display
@@ -126,15 +127,22 @@ void setup() {
   stopX = pauseX1 - ( buttonPositionColumn*buttonReferentMeasure );
   stopY = pauseY1;
   //
-  buttonPositionRow = -1;
+  buttonPositionColumn = 1;
   loopPlaylistX = pauseX1;
-  loopPlaylistY = pauseY1 + ( buttonPositionRow*buttonReferentMeasure );
+  loopPlaylistY = pauseY1 + ( buttonPositionColumn*buttonReferentMeasure );
+  loopPlaylistX1 = loopPlaylistX;
+  loopPlaylistY1 = loopPlaylistY;
+  loopPlaylistX3 = loopPlaylistX1;
+  loopPlaylistY3 = loopPlaylistY1 + buttonReferentMeasure;
+  loopPlaylistX2 = loopPlaylistX1 + buttonReferentMeasure*1/2;
+  loopPlaylistY2 = loopPlaylistY1 + ( loopPlaylistY3 - loopPlaylistY1)*1/2;
+  loopPlaylistWidth = buttonReferentMeasure*1/4;
   //
 } //End setup
 //
 void draw() {
   //Button Space
-  //rect( spaceX, spaceYm spaceWidth, buttonSide );
+  //rect( spaceX, spaceY, spaceWidth, buttonSide );
   //rect( spaceX, spaceY, spaceWidth, buttonSide );
   //
   //Stop Button
@@ -190,10 +198,10 @@ void draw() {
   //triangle( loopIX1, loopIY1, loopIX2, loopY2, loopIX3, loopIY3 );
   //loop the playlist infinitely
   //Students to Develop
-  rect( loopPlaylistX, loopPlaylistY, buttonSide, buttonSide ); //layout
+  //rect( loopPlaylistX, loopPlaylistY, buttonSide, buttonSide ); //layout
   //ellipse( loopPlaylistX, loopPlaylistY, loopPlaylistWidthDiameter, loopPlaylistHeightDiameter );
-  //ellipse( loopPlaylistX, loopPlaylistY, loopPlaylistWidthDiameter, loopPlaylistHeightDiameter );
-  //triangle( loopPlaylistX1, loopPlaylistY1, loopPlaylistX2, loopPlaylistY2, loopPlaylistX3, loopPlaylistY3 );
+  ellipse( loopPlaylistX + 59, loopPlaylistY + 44, loopIWidthDiameter, loopIHeightDiameter );
+  triangle( loopPlaylistX1, loopPlaylistY1, loopPlaylistX2 + 25, loopPlaylistY2, loopPlaylistX3, loopPlaylistY3 );
   //
 } //end draw
 //
