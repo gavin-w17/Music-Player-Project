@@ -194,7 +194,7 @@ void draw() {
   //students to develop
   //rect( loopIX, loopIY, buttonSide, buttonSide ); //layout
   ellipse( loopIX + 10, loopIY + 44, loopIWidthDiameter, loopIHeightDiameter );
-  ellipse( loopIX + 69, loopIY + 44, loopIWidthDiameter, loopIHeightDiameter );
+  ellipse( loopIX + 79, loopIY + 44, loopIWidthDiameter, loopIHeightDiameter );
   //triangle( loopIX1, loopIY1, loopIX2, loopY2, loopIX3, loopIY3 );
   //loop the playlist infinitely
   //Students to Develop
