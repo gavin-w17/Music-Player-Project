@@ -160,7 +160,9 @@ void draw() {
   //
   //Mute Button
   //rect( muteX, muteY, buttonSide, buttonSide ); //Layout
-  triangle( muteX, muteY, muteX2, muteY2, muteX3, muteY3 );
+  triangle( muteX + 45, muteY, muteX2 + 45, muteY2, muteX3 + 45, muteY3 );
+  rect( muteX + 19, muteY, spaceWidth *0.5, buttonSide *0.4 );
+  rect( muteX + 19, muteY + 48, spaceWidth *0.5, buttonSide *0.4 );
   //students to develop
   //
   //Fast Forward in the song
