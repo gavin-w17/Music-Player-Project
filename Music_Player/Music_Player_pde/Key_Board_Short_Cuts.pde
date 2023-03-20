@@ -59,7 +59,7 @@ void mute()
   if ( song0.isMuted() ) {
     song0.unmute();
   } else if ( song0.isMuted() && song0.position() >= song0.length()*4/5 ) {
-    song0.rewind();
+    song0.rewind(); //one solution
     song0.unmute();
   }  else {
     song0.mute();
