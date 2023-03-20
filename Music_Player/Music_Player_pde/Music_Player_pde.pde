@@ -43,7 +43,6 @@ void keyPressed() {
   //println( "KeyPressed:", soundEffect0.length() );
   //
   keyPressedShortCuts();
-  quitButtons();
   //
 } //End keyPressed
 //

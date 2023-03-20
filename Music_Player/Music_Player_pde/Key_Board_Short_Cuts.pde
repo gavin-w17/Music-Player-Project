@@ -3,7 +3,7 @@ void keyPressedShortCuts() {
   musicShortCuts();
   quitButtons();
   //
-}//Key Board Short Cuts for Music, use numbers
+}//Key Board Short Cuts for Music, use numbers (End KeyPressed)
 //
 void musicShortCuts() {
   if ( key=='1' ) song0.loop(0); //.rewind() is included in .loop()
@@ -15,8 +15,17 @@ void musicShortCuts() {
   if ( key=='7' ) song6.loop(0);
   if ( key=='8' ) song7.loop(0);
   //
-  //Quit Button Key Board Shortcut
-}//End keyPressedShortCuts
+  if ( key == 'P' || key == 'p' ) autoPlay();
+  if ( key == 'S' || key == 's' ) stopSong();
+  if ( key == 'F' || key == 'f' ) fastForward();
+  if ( key == 'R' || key == 'r' ) fastRewind(); 
+  if ( key == 'N' || key == 'n' ) nextSong();
+  if ( key == 'B' || key == 'b' ) previousSong();
+  if ( key == 'L' || key == 'l' ) loopSong();
+  if ( key == 'O' || key == 'o' ) loopPlaylist(); //entire playlist 
+  if ( key == 'W' || key == 'w' ) shufflePlaylist(); //shuffle
+  if ( key == 'E' || key == 'e' ) loopAndShuffle(); //Loop and Shuffle
+}//End musicShortCuts
 //
 void quitButtons() {
   //Quit Button Key Board Shortcut
