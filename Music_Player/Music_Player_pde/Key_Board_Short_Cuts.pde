@@ -17,7 +17,7 @@ void musicShortCuts() {
   //
   if ( key == 'U' || key == 'u' ) autoPlay();
   if ( key == 'P' || key == 'p' ) playPause();
-  if ( key == 'M' || key == 'm' ) muteSong();
+  if ( key == 'M' || key == 'm' ) mute();
   if ( key == 'S' || key == 's' ) stopSong();
   if ( key == 'F' || key == 'f' ) fastForward();
   if ( key == 'R' || key == 'r' ) fastRewind(); 
@@ -48,9 +48,23 @@ soundEffect1.loop(0); //only need partial file, use .play(int millis)
 //
 void autoPlay() {}//End AutoPlay
 //
-void playPause() {}//end playpause
+void playPause() {
+}//end playpause
 //
-void muteSong() {}//end mutesong
+void mute() 
+{
+  //MUTE, not PAUSE, only affects the speakers
+  //ERROR: this MUTE button only works when the song is playing
+  //ERROR: user will spam mmute if song is at end of file
+  if ( song0.isMuted() ) {
+    song0.unmute();
+  } else if ( song0.isMuted() && song0.position() >= song0.length()*4/5 ) {
+    song0.rewind();
+    song0.unmute();
+  }  else {
+    song0.mute();
+  }
+}//end mutesong
 //
 void stopSong() {}//end stop song
 //
