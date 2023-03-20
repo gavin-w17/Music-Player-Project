@@ -44,4 +44,23 @@ soundEffect1.loop(0); //only need partial file, use .play(int millis)
     exit();
 }//End quitButtonCode
 //
+void autoPlay() {}//End AutoPlay
+//
+void stopSong() {}//end stop song
+//
+void fastFoward() {}//end fast forward
+//
+void fastRewind() {}//end fast rewind
+//
+void nextSong() {}//end next song
+//
+void previousSong() {}//end previous song
+//
+void loopSong() {}// end loop song
+//
+void loopPlaylist() {}// end loopPlaylist
+//
+void shufflePlaylist() {}// end shuffle playlist
+//
+void loopAndShuffle() {}//end loop & shuffle
 //End Key Board Short Cuts Sub Program
