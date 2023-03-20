@@ -15,7 +15,9 @@ void musicShortCuts() {
   if ( key=='7' ) song6.loop(0);
   if ( key=='8' ) song7.loop(0);
   //
-  if ( key == 'P' || key == 'p' ) autoPlay();
+  if ( key == 'U' || key == 'u' ) autoPlay();
+  if ( key == 'P' || key == 'p' ) playPause();
+  if ( key == 'M' || key == 'm' ) muteSong();
   if ( key == 'S' || key == 's' ) stopSong();
   if ( key == 'F' || key == 'f' ) fastForward();
   if ( key == 'R' || key == 'r' ) fastRewind(); 
@@ -46,9 +48,13 @@ soundEffect1.loop(0); //only need partial file, use .play(int millis)
 //
 void autoPlay() {}//End AutoPlay
 //
+void playPause() {}//end playpause
+//
+void muteSong() {}//end mutesong
+//
 void stopSong() {}//end stop song
 //
-void fastFoward() {}//end fast forward
+void fastForward() {}//end fast forward
 //
 void fastRewind() {}//end fast rewind
 //
