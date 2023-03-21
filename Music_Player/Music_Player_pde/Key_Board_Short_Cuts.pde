@@ -15,10 +15,11 @@ void musicShortCuts() {
   if ( key=='7' ) song6.loop(0);
   if ( key=='8' ) song7.loop(0);
   //
+  //Students to make these smarter
   if ( key == 'U' || key == 'u' ) autoPlay();
   if ( key == 'P' || key == 'p' ) playPause();
-  if ( key == 'M' || key == 'm' ) mute();
-  if ( key == 'S' || key == 's' ) stopSong();
+  if ( key == 'M' || key == 'm' ) mute(); //teacher started
+  if ( key == 'S' || key == 's' ) stopSong(); //teacher started
   if ( key == 'F' || key == 'f' ) fastForward();
   if ( key == 'R' || key == 'r' ) fastRewind(); 
   if ( key == 'N' || key == 'n' ) nextSong();
@@ -46,16 +47,33 @@ soundEffect1.loop(0); //only need partial file, use .play(int millis)
     exit();
 }//End quitButtonCode
 //
-void autoPlay() {}//End AutoPlay
+void autoPlay() {
+  //Note: plays one song, then the next automatically
+  //asks the computer if a song is playing, continually
+  //when current song finishes, it rewinds current song and plays the next song
+}//End AutoPlay
 //
-void playPause() {
+void playPause() 
+{
+  //Ask computer if the song is playing
+  //Note: remember to use Auto Play
+  //ERROR: song will not play if at the end
+  if ( song0.isPlaying() ) {
+    song0.pause();
+  } else if ( song0.position() >= song0.length()*4/5 ) { //80% of the song duration
+   .rewind();  
+   .play();
+  } else {
+    //autoPlay(), is better here
+    song0.play(); //Interim Solution
+  }
 }//end playpause
 //
 void mute() 
 {
   //MUTE, not PAUSE, only affects the speakers
   //ERROR: this MUTE button only works when the song is playing
-  //ERROR: user will spam mmute if song is at end of file
+  //ERROR: user will spam mute if song is at end of file
   if ( song0.isMuted() ) {
     song0.unmute();
   } else if ( song0.isMuted() && song0.position() >= song0.length()*4/5 ) {
@@ -66,11 +84,27 @@ void mute()
   }
 }//end mutesong
 //
-void stopSong() {}//end stop song
+void stopSong() 
+{
+  //Based on  question: is the song playing?
+  //Hint: would this fix ERROR of the MUTE button? //if() {} else {}
+  //NOTE: STOP is actually a fancy rewind button, no ERRORS
+  if ( song0.isPlaying() ) {
+    song0.pause();
+    song0.rewind();
+  } else {
+    song0.rewind();
+  }
+}//end stop song
 //
-void fastForward() {}//end fast forward
+void fastForward() {
+  //Asks computer if the song is playing 
+  if ( song0.isPlaying() ) song0.skip(1000); //Parameter in milliseconds
+}//end fast forward
 //
-void fastRewind() {}//end fast rewind
+void fastRewind() {
+  if ( song0.isPlaying() ) song0.skip(-1000);
+}//end fast rewind
 //
 void nextSong() {}//end next song
 //
