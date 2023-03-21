@@ -16,15 +16,15 @@ void musicShortCuts() {
   if ( key=='8' ) song7.loop(0);
   //
   //Students to make these smarter
-  if ( key == 'U' || key == 'u' ) autoPlay();
-  if ( key == 'P' || key == 'p' ) playPause();
+  if ( key == 'U' || key == 'u' ) autoPlay(); //pseudo code only
+  if ( key == 'P' || key == 'p' ) playPause(); //teacher started
   if ( key == 'M' || key == 'm' ) mute(); //teacher started
   if ( key == 'S' || key == 's' ) stopSong(); //teacher started
-  if ( key == 'F' || key == 'f' ) fastForward();
-  if ( key == 'R' || key == 'r' ) fastRewind(); 
-  if ( key == 'N' || key == 'n' ) nextSong();
-  if ( key == 'B' || key == 'b' ) previousSong();
-  if ( key == 'L' || key == 'l' ) loopSong();
+  if ( key == 'F' || key == 'f' ) fastForward(); //teacher started
+  if ( key == 'R' || key == 'r' ) fastRewind(); //teacher started
+  if ( key == 'N' || key == 'n' ) nextSong(); //psuedo code only
+  if ( key == 'B' || key == 'b' ) previousSong(); //psuedo code only
+  if ( key == 'L' || key == 'l' ) loopSong(); //loops current song infinitely
   if ( key == 'O' || key == 'o' ) loopPlaylist(); //entire playlist 
   if ( key == 'W' || key == 'w' ) shufflePlaylist(); //shuffle
   if ( key == 'E' || key == 'e' ) loopAndShuffle(); //Loop and Shuffle
@@ -61,8 +61,9 @@ void playPause()
   if ( song0.isPlaying() ) {
     song0.pause();
   } else if ( song0.position() >= song0.length()*4/5 ) { //80% of the song duration
-   .rewind();  
-   .play();
+   song0.rewind();  
+   song0.play();
+   //auto play is better because it plays the next song
   } else {
     //autoPlay(), is better here
     song0.play(); //Interim Solution
@@ -76,7 +77,7 @@ void mute()
   //ERROR: user will spam mute if song is at end of file
   if ( song0.isMuted() ) {
     song0.unmute();
-  } else if ( song0.isMuted() && song0.position() >= song0.length()*4/5 ) {
+  } else if ( song0.isMuted() && song0.position() >= song0.length()*9/10 ) {
     song0.rewind(); //one solution
     song0.unmute();
   }  else {
@@ -99,11 +100,11 @@ void stopSong()
 //
 void fastForward() {
   //Asks computer if the song is playing 
-  if ( song0.isPlaying() ) song0.skip(1000); //Parameter in milliseconds
+  if ( song0.isPlaying() ) song0.skip(2500); //Parameter in milliseconds
 }//end fast forward
 //
 void fastRewind() {
-  if ( song0.isPlaying() ) song0.skip(-1000);
+  if ( song0.isPlaying() ) song0.skip(-2500);
 }//end fast rewind
 //
 void nextSong() {}//end next song
