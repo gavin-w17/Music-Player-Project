@@ -6,14 +6,14 @@ void keyPressedShortCuts() {
 }//Key Board Short Cuts for Music, use numbers (End KeyPressed)
 //
 void musicShortCuts() {
-  if ( key=='1' ) song0.loop(0); //.rewind() is included in .loop()
-  if ( key=='2' ) song1.loop(0);
-  if ( key=='3' ) song2.loop(0);
-  if ( key=='4' ) song3.loop(0);
-  if ( key=='5' ) song4.loop(0);
-  if ( key=='6' ) song5.loop(0);
-  if ( key=='7' ) song6.loop(0);
-  if ( key=='8' ) song7.loop(0);
+  if ( key=='1' ) songs[0].loop(0); //.rewind() is included in .loop()
+  if ( key=='2' ) songs[1].loop(0);
+  if ( key=='3' ) songs[2].loop(0);
+  if ( key=='4' ) songs[3].loop(0);
+  if ( key=='5' ) songs[4].loop(0);
+  if ( key=='6' ) songs[5].loop(0);
+  if ( key=='7' ) songs[6].loop(0);
+  if ( key=='8' ) songs[7].loop(0);
   //
   //Students to make these smarter
   if ( key == 'U' || key == 'u' ) autoPlay(); //pseudo code only
@@ -41,7 +41,7 @@ void quitButtons() {
 }//End quitButtons
 //
 void quitButtonCode() {
-soundEffect1.loop(0); //only need partial file, use .play(int millis)
+soundEffects[1].loop(0); //only need partial file, use .play(int millis)
     //Visual Image or Text of Goodbye
     delay(3000); //alternate way of playing sound once
     exit();
@@ -58,15 +58,15 @@ void playPause()
   //Ask computer if the song is playing
   //Note: remember to use Auto Play
   //ERROR: song will not play if at the end
-  if ( song0.isPlaying() ) {
-    song0.pause();
-  } else if ( song0.position() >= song0.length()*4/5 ) { //80% of the song duration
-   song0.rewind();  
-   song0.play();
+  if ( songs[currentSong].isPlaying() ) {
+    songs[currentSong].pause();
+  } else if ( songs[currentSong].position() >= songs[currentSong].length()*4/5 ) { //80% of the song duration
+   songs[currentSong].rewind();  
+   songs[currentSong].play();
    //auto play is better because it plays the next song
   } else {
     //autoPlay(), is better here
-    song0.play(); //Interim Solution
+    songs[currentSong].play(); //Interim Solution
   }
 }//end playpause
 //
@@ -75,13 +75,13 @@ void mute()
   //MUTE, not PAUSE, only affects the speakers
   //ERROR: this MUTE button only works when the song is playing
   //ERROR: user will spam mute if song is at end of file
-  if ( song0.isMuted() ) {
-    song0.unmute();
-  } else if ( song0.isMuted() && song0.position() >= song0.length()*9/10 ) {
-    song0.rewind(); //one solution
-    song0.unmute();
+  if ( songs[currentSong].isMuted() ) {
+    songs[currentSong].unmute();
+  } else if ( songs[currentSong].isMuted() && songs[currentSong].position() >= songs[currentSong].length()*9/10 ) {
+    songs[currentSong].rewind(); //one solution
+    songs[currentSong].unmute();
   }  else {
-    song0.mute();
+    songs[currentSong].mute();
   }
 }//end mutesong
 //
@@ -90,21 +90,21 @@ void stopSong()
   //Based on  question: is the song playing?
   //Hint: would this fix ERROR of the MUTE button? //if() {} else {}
   //NOTE: STOP is actually a fancy rewind button, no ERRORS
-  if ( song0.isPlaying() ) {
-    song0.pause();
-    song0.rewind();
+  if ( songs[currentSong].isPlaying() ) {
+    songs[currentSong].pause();
+    songs[currentSong].rewind();
   } else {
-    song0.rewind();
+    songs[currentSong].rewind();
   }
 }//end stop song
 //
 void fastForward() {
   //Asks computer if the song is playing 
-  if ( song0.isPlaying() ) song0.skip(2500); //Parameter in milliseconds
+  if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(500); //Parameter in milliseconds
 }//end fast forward
 //
 void fastRewind() {
-  if ( song0.isPlaying() ) song0.skip(-2500);
+  if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(-500);
 }//end fast rewind
 //
 void nextSong() {}//end next song
