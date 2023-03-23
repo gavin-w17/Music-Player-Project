@@ -51,9 +51,10 @@ void autoPlay() {
   //Note: plays one song, then the next automatically
   //asks the computer if a song is playing, continually
   //when current song finishes, it rewinds current song and plays the next song
+  //
 }//End AutoPlay
 //
-void playPause() 
+void playPause()
 {
   //Ask computer if the song is playing
   //Note: remember to use Auto Play
@@ -107,9 +108,32 @@ void fastRewind() {
   if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(-500);
 }//end fast rewind
 //
-void nextSong() {}//end next song
+void nextSong() {
+  //ERROR: ArrayListOutOfBounds
+  //ERROR: currentSong++ plays two songs or more at once
+  if ( songs[currentSong].isPlaying() ) {
+    //students to finish
+    //current song: .pause(), .rewind()
+    //next: currentSong++
+    //now: Delay-1-Second, .play()
+  } else if ( currentSong >= songs.length-1 ) {
+    currentSong = 0;
+  } else {
+    songs[currentSong].rewind();
+    currentSong++;
+  }
+}//end next song
 //
-void previousSong() {}//end previous song
+void previousSong() {
+  //ERROR: ArrayListOutOfBounds
+  if ( songs[currentSong].isPlaying() ) {
+  } else if ( currentSong >= songs.length+1 ) {
+    currentSong = 0;
+  } else {
+    songs[currentSong].rewind();
+  currentSong--;
+  }
+}//end previous song
 //
 void loopSong() {}// end loop song
 //
