@@ -112,12 +112,15 @@ void nextSong() {
   //ERROR: ArrayListOutOfBounds
   //ERROR: currentSong++ plays two songs or more at once
   if ( songs[currentSong].isPlaying() ) {
+    songs[currentSong].pause();
+    songs[currentSong].rewind();
     //students to finish
     //current song: .pause(), .rewind()
     //next: currentSong++
     //now: Delay-1-Second, .play()
   } else if ( currentSong >= songs.length-1 ) {
     currentSong = 0;
+    songs[currentSong].play();
   } else {
     songs[currentSong].rewind();
     currentSong++;
@@ -127,6 +130,8 @@ void nextSong() {
 void previousSong() {
   //ERROR: ArrayListOutOfBounds
   if ( songs[currentSong].isPlaying() ) {
+    songs[currentSong].pause();
+    songs[currentSong].skip(500);
   } else if ( currentSong >= songs.length+1 ) {
     currentSong = 0;
   } else {
