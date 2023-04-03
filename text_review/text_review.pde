@@ -34,6 +34,7 @@ void setup() {
   text( string, textRectX, textRectY, textRectWidth, textRectHeight );
   //
   fill(resetWhiteInk); //reset
+  //
 }//end setup
 //
 void draw() {
