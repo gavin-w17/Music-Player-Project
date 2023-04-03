@@ -51,8 +51,17 @@ void autoPlay() {
   //Note: plays one song, then the next automatically
   //asks the computer if a song is playing, continually
   //when current song finishes, it rewinds current song and plays the next song
+  if ( autoPlayON==false ) {
+    autoPlayON=true;
+  } else {
+    autoPlayON=false;
+    songs[currentSong].pause();
   //
 }//End AutoPlay
+void autoPlayMusic() {
+  if ( songs[currentSong].isPlaying()==false ) {
+    currentSong++
+    songs[currentSong].play();
 //
 void playPause()
 {
