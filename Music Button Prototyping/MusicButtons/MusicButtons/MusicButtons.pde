@@ -19,6 +19,8 @@ float loopIWidthDiameter, loopIHeightDiameter, loopIX1, loopIX2, loopIX3, loopIY
 float loopPlaylistX1, loopPlaylistX2, loopPlaylistX3, loopPlaylistY1, loopPlaylistY2, loopPlaylistY3, loopPlaylistWidth;
 //
 void setup() {
+  //Text
+  textSetup();
   //Display
   size(700, 500); //width, height
   //fullscreen(); //displayWidth, displayHeight
@@ -141,6 +143,8 @@ void setup() {
 } //End setup
 //
 void draw() {
+  //Text
+  allText();
   //Button Space
   //rect( spaceX, spaceY, spaceWidth, buttonSide );
   //rect( spaceX, spaceY, spaceWidth, buttonSide );
