@@ -11,7 +11,7 @@ float picX_Adjusted=0.0, picY_Adjusted=0.0, picHeightAdjusted=0.0, picWidthAdjus
 float whiteSpace=0.0;
 Boolean imageCenter=false, imageRightBottom=false;
 //
-size(700, 450); //Landscape
+size(700, 500); //Landscape
 appWidth = width;
 appHeight = height;
 //
