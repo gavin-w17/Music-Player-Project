@@ -16,6 +16,7 @@ String string2 = "Fast Forward";
 String string3 = "Fast Rewind";
 String string4 = "Previous Song";
 String string5 = "Next Song";
+String string6 = "Mute Song";
 //
 void textSetup() {
   textPlaypauseX = width*3.6/8;
@@ -24,20 +25,23 @@ void textSetup() {
   textRectHeight1 = textRectHeight3 = textRectHeight4 = textRectHeight5 = height*1/10;
   textFFX = width*4.59/8;
   textFFY = height*4.34/8;
-  textRectWidth2 = width*2/20;
-  textRectHeight2 = height*1/10;
+  textRectWidth2 = textRectWidth6 = width*2/20;
+  textRectHeight2 = textRectHeight6 = height*1/10;
   textFRX = width*2.67/8;
   textFRY = height*4.34/8;
   textPreviousX = width*1.7/8;
   textPreviousY = height*4.44/8;
   textNextX = width*5.95/8;
   textNextY = height*4.44/8;
+  textMuteX = width*4.56/8;
+  textMuteY = height*2.3/8;
   //
   rect( textPlaypauseX, textPlaypauseY, textRectWidth1, textRectHeight1 );
   rect( textFFX, textFFY, textRectWidth2, textRectHeight2 );
   rect( textFRX, textFRY, textRectWidth3, textRectHeight3 );
   rect( textPreviousX, textPreviousY, textRectWidth4, textRectHeight4 );
   rect( textNextX, textNextY, textRectWidth5, textRectHeight5 );
+  rect( textMuteX, textMuteY, textRectWidth6, textRectHeight6 );
   //
   font = createFont ("Calibri", 55);
 };
@@ -55,8 +59,8 @@ void allText() {
   textDraw3();
   textDraw4();
   textDraw5();
-  /*textDraw6();
-  textDraw7();
+  textDraw6();
+  /*textDraw7();
   textDraw8();
   textDraw9();
   textDraw10();*/
@@ -102,6 +106,13 @@ void textDraw5() {//next button text
   textSize( 14 );
   //printing text on screen
   text( string5, textNextX, textNextY, textRectWidth5, textRectHeight5 );
+  fill(resetWhiteInk);
+}
+void textDraw6() {
+  preTextDraw();
+  //
+  textSize( 14 );
+  text( string6, textMuteX, textMuteY, textRectWidth6, textRectHeight6 );
   fill(resetWhiteInk);
 }
 //end text subprogram
