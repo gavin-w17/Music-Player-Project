@@ -51,20 +51,22 @@ void autoPlay() {
   //Note: plays one song, then the next automatically
   //asks the computer if a song is playing, continually
   //when current song finishes, it rewinds current song and plays the next song
-  if ( autoPlayON==false ) {
-    autoPlayON=true;
+  if ( autoPlay==false ) {
+    autoPlay=true;
   } else {
-    autoPlayON=false;
-    songs[currentSong].pause();
-  //
-}//End AutoPlay
-void autoPlayMusic() {
-  if ( songs[currentSong].isPlaying()==false ) {
-    currentSong++
-    songs[currentSong].play();
+    autoPlay=false;
+    songs[currentSong].pause(); 
+  }
+}//end autoplay
 //
-void playPause()
+void autoPlayMusic() 
 {
+   if ( songs[currentSong].isPlaying()==false ) {
+    currentSong++;
+    songs[currentSong].play(); }
+}
+//
+void playPause() {
   //Ask computer if the song is playing
   //Note: remember to use Auto Play
   //ERROR: song will not play if at the end
@@ -80,8 +82,7 @@ void playPause()
   }
 }//end playpause
 //
-void mute() 
-{
+void mute() {
   //MUTE, not PAUSE, only affects the speakers
   //ERROR: this MUTE button only works when the song is playing
   //ERROR: user will spam mute if song is at end of file
@@ -95,8 +96,7 @@ void mute()
   }
 }//end mutesong
 //
-void stopSong() 
-{
+void stopSong() {
   //Based on  question: is the song playing?
   //Hint: would this fix ERROR of the MUTE button? //if() {} else {}
   //NOTE: STOP is actually a fancy rewind button, no ERRORS
