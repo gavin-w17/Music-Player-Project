@@ -19,6 +19,8 @@ float loopIWidthDiameter, loopIHeightDiameter, loopIX1, loopIX2, loopIX3, loopIY
 float loopPlaylistX1, loopPlaylistX2, loopPlaylistX3, loopPlaylistY1, loopPlaylistY2, loopPlaylistY3, loopPlaylistWidth;
 //
 void setup() {
+  //Image
+  imageSetup();
   //Text
   textSetup();
   //Display
