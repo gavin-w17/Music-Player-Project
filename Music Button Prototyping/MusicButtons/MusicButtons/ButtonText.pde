@@ -6,9 +6,8 @@ float textPreviousX, textPreviousY, textRectWidth4, textRectHeight4;
 float textNextX, textNextY, textRectWidth5, textRectHeight5;
 float textMuteX, textMuteY, textRectWidth6, textRectHeight6;
 float textloopPlaylistX, textloopPlaylistY, textRectWidth7, textRectHeight7;
-float textloop1X, textloop1Y, textRectWidth8, textRectHeight8;
+float textloopSongX, textloopSongY, textRectWidth8, textRectHeight8;
 float textloopinfX, textloopinfY, textRectWidth9, textRectHeight9;
-float textcurrentsongX, textcurrentsongY, textRectWidth10, textRectHeight10;
 color blackInk=#000000, resetWhiteInk=#FFFFFF;
 PFont font;
 String string1 = "Play/Pause";
@@ -17,6 +16,9 @@ String string3 = "Fast Rewind";
 String string4 = "Previous Song";
 String string5 = "Next Song";
 String string6 = "Mute Song";
+String string7 = "Loop Playlist";
+String string8 = "Loop Song";
+String string9 = "Loop Infinitely";
 //
 void textSetup() {
   textPlaypauseX = width*3.6/8;
@@ -25,8 +27,8 @@ void textSetup() {
   textRectHeight1 = textRectHeight3 = textRectHeight4 = textRectHeight5 = height*1/10;
   textFFX = width*4.59/8;
   textFFY = height*4.34/8;
-  textRectWidth2 = textRectWidth6 = width*2/20;
-  textRectHeight2 = textRectHeight6 = height*1/10;
+  textRectWidth2 = textRectWidth6 = textRectWidth7 = textRectWidth8 = textRectWidth9 = width*2/20;
+  textRectHeight2 = textRectHeight6 = textRectHeight7 = textRectHeight8 = textRectHeight9 = height*1/10;
   textFRX = width*2.67/8;
   textFRY = height*4.34/8;
   textPreviousX = width*1.7/8;
@@ -35,6 +37,12 @@ void textSetup() {
   textNextY = height*4.44/8;
   textMuteX = width*4.56/8;
   textMuteY = height*2.3/8;
+  textloopPlaylistX = width*4/12;
+  textloopPlaylistY = height*1/8;
+  textloopSongX = width*1/12.4;
+  textloopSongY = height*4.44/8;
+  textloopinfX = width*3.7/8;
+  textloopinfY = height*6/8;
   //
   rect( textPlaypauseX, textPlaypauseY, textRectWidth1, textRectHeight1 );
   rect( textFFX, textFFY, textRectWidth2, textRectHeight2 );
@@ -42,6 +50,9 @@ void textSetup() {
   rect( textPreviousX, textPreviousY, textRectWidth4, textRectHeight4 );
   rect( textNextX, textNextY, textRectWidth5, textRectHeight5 );
   rect( textMuteX, textMuteY, textRectWidth6, textRectHeight6 );
+  rect( textloopPlaylistX, textloopPlaylistY, textRectWidth7, textRectHeight7 );
+  rect( textloopSongX, textloopSongY, textRectWidth8, textRectHeight8 );
+  rect( textloopinfX, textloopinfY, textRectWidth9, textRectHeight9 );
   //
   font = createFont ("Calibri", 55);
 };
@@ -60,10 +71,9 @@ void allText() {
   textDraw4();
   textDraw5();
   textDraw6();
-  /*textDraw7();
+  textDraw7();
   textDraw8();
   textDraw9();
-  textDraw10();*/
 };//end allText
 //
 void textDraw1() { //play/pause text
@@ -108,11 +118,32 @@ void textDraw5() {//next button text
   text( string5, textNextX, textNextY, textRectWidth5, textRectHeight5 );
   fill(resetWhiteInk);
 }
-void textDraw6() {
+void textDraw6() {//mute button text
   preTextDraw();
   //
   textSize( 14 );
   text( string6, textMuteX, textMuteY, textRectWidth6, textRectHeight6 );
+  fill(resetWhiteInk);
+}
+void textDraw7() {//loop playlist button text
+  preTextDraw();
+  //
+  textSize( 14 );
+  text( string7, textloopPlaylistX, textloopPlaylistY, textRectWidth7, textRectHeight7 );
+  fill(resetWhiteInk);
+}
+void textDraw8() {//loop song button text
+  preTextDraw();
+  //
+  textSize( 14 );
+  text( string8, textloopSongX, textloopSongY, textRectWidth8, textRectHeight8 );
+  fill(resetWhiteInk);
+}
+void textDraw9() {
+  preTextDraw();
+  //
+  textSize( 14 );
+  text( string9, textloopinfX, textloopinfY, textRectWidth9, textRectHeight9 );
   fill(resetWhiteInk);
 }
 //end text subprogram
