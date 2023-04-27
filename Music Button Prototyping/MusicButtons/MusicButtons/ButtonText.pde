@@ -147,3 +147,4 @@ void textDraw9() {
   fill(resetWhiteInk);
 }
 //end text subprogram
+//all text finished
