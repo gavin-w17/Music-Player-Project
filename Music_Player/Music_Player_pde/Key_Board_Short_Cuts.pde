@@ -51,7 +51,7 @@ void autoPlay() {
   //Note: plays one song, then the next automatically
   //asks the computer if a song is playing, continually
   //when current song finishes, it rewinds current song and plays the next song
-  if ( autoPlay==false ) {
+  if ( autoPlay==true ) {
     autoPlay=true;
   } else {
     autoPlay=false;
