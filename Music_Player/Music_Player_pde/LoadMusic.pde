@@ -1,12 +1,14 @@
   //Global variables
-  //
   Minim minim;
-  int numberOfSongs = 1;
-  AudioPlayer song0;
+  int numberOfSongs = 8;
+  AudioPlayer[] songs = new AudioPlayer[numberOfSongs];
   int numberOfSoundEffects = 2;
-  AudioPlayer soundEffect0, soundEffect1;
+  AudioPlayer[] soundEffects = new AudioPlayer[numberOfSoundEffects];
+  //
+  int currentSong = 0;
   //Concatenation of Pathway + File Name
- void loadMusic() {
+ void musicLoadSetup() {
+ //
  char fslash = '/';
  String Sound = "Sound";
  String Music = "Music";
@@ -18,28 +20,50 @@
  String groove = "groove"; //File Name
  char derefencer = '.';
  String fileExtension = "mp3";
- /*String thesimplestFileName = "The_Simplest.mp3";
- String startyourenginesFileName = "Start_Your_Engines.mp3";
- String newsroomFileName = "Newsroom.mp3";
- String ghostwalkFileName = "Ghost_Walk.mp3";
- String eurekaFileName = "Eureka.mp3";
- String cyclesFileName = "Cycles.mp3";
- String beatyourcompetitionFileName = "Beat_Your_Competition.mp3";*/
+ String thesimplest = "The_Simplest";
+ String startyourengines = "Start_Your_Engines";
+ String newsroom = "Newsroom";
+ String ghostwalk = "Ghost_Walk";
+ String eureka = "Eureka";
+ String cycles = "Cycles";
+ String beatyourcompetition = "Beat_Your_Competition";
  String The_Simplest_Sting = "The_Simplest_Sting";
  String DoorClose = "Wood_Door_Open_and_Close_Series";
  //
  minim = new Minim(this);
  //
-  song0 = minim.loadFile( musicPathway + groove + derefencer + fileExtension );
-  /*songs[1] = minim.loadFile( musicPathway + thesimplestFileName );
-  songs[2] = minim.loadFile( musicPathway + startyourenginesFileName );
-  songs[3] = minim.loadFile( musicPathway + newsroomFileName );
-  songs[4] = minim.loadFile( musicPathway + ghostwalkFileName );
-  songs[5] = minim.loadFile( musicPathway + eurekaFileName );
-  songs[6] = minim.loadFile( musicPathway + cyclesFileName );
-  songs[7] = minim.loadFile( musicPathway + beatyourcompetitionFileName );*/
-  soundEffect0 = minim.loadFile( soundEffectPathway + The_Simplest_Sting + derefencer + fileExtension);
-  soundEffect1 = minim.loadFile( soundEffectPathway + DoorClose + derefencer + fileExtension );
+  songs[0] = minim.loadFile( musicPathway + groove + derefencer + fileExtension );
+  songs[1] = minim.loadFile( musicPathway + thesimplest + derefencer + fileExtension );
+  songs[2] = minim.loadFile( musicPathway + startyourengines + derefencer + fileExtension );
+  songs[3] = minim.loadFile( musicPathway + newsroom + derefencer + fileExtension);
+  songs[4] = minim.loadFile( musicPathway + ghostwalk + derefencer + fileExtension );
+  songs[5] = minim.loadFile( musicPathway + eureka + derefencer + fileExtension );
+  songs[6] = minim.loadFile( musicPathway + cycles + derefencer + fileExtension );
+  songs[7] = minim.loadFile( musicPathway + beatyourcompetition + derefencer + fileExtension );
+  soundEffects[0] = minim.loadFile( soundEffectPathway + The_Simplest_Sting + derefencer + fileExtension);
+  soundEffects[1] = minim.loadFile( soundEffectPathway + DoorClose + derefencer + fileExtension );
   //
   //printIn("Music Pathway is", musicPathway);
 }//End loadMusic
+void musicFeaturesKeyPressed() {}//end musicfeatureskeypressed
+//
+void musicFeaturesMousePressed() {}//end mousefeaturesmousepressed(){}
+//
+void exitProgram() {
+  soundEffects[0].loop(0);
+  delay(2000);
+  exit();
+}//end exit program
+//
+void testingMusic() {
+  if ( key == '1' ) songs[0].loop(0);
+  if ( key == '2' ) songs[1].loop(0);
+  if ( key == '3' ) songs[2].loop(0);
+  if ( key == '4' ) songs[3].loop(0);
+  if ( key == '5' ) songs[4].loop(0);
+  if ( key == '6' ) songs[5].loop(0);
+  if ( key == '7' ) songs[6].loop(0);
+  if ( key == '8' ) songs[7].loop(0);
+}//end testingMusic
+//
+//end music subprogram

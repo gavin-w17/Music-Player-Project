@@ -6,13 +6,7 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
 void setup() {
-  //
-  loadMusic();
-  //
-  song0.loop(0);
-  soundEffect0.loop(0);
-  soundEffect1.loop(0);
-  //
+  musicLoadSetup();
 }//End setup
 //
 void draw() {
@@ -20,16 +14,15 @@ void draw() {
 } //end draw
 //
 void keyPressed() {
-  soundEffect0.loop(0); // Auditory keyboard feedback
+  soundEffects[0].loop(0); // Auditory keyboard feedback
   delay(4000);
-  soundEffect0.pause();
-  soundEffect0.rewind();
-  if ( key=='Q' || key=='q' ) {
-    soundEffect0.loop(0); // exit sound
-    delay(3000);
-    exit();
-  }
+  soundEffects[0].pause();
+  soundEffects[0].rewind();
+  //
+  musicFeaturesKeyPressed();
+  //
 }
 //
+//number keys for each song
 //end main program
  
