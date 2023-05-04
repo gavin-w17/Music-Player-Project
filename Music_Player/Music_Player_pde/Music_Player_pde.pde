@@ -21,8 +21,39 @@ void keyPressed() {
   //
   musicFeaturesKeyPressed();
   //
-}
+  //single song features
+  if ( key == 'P' || key == 'p' ) playPause();
+  if ( key == 'M' || key == 'm' ) mute();
+  if ( key == 'S' || key == 's' ) stopSong();
+  if ( key == 'F' || key == 'f' ) fastForward();
+  if ( key == 'R' || key == 'r' ) fastRewind();
+} //end keyPressed
+void mousePressed() {}
 //
+void playPause() 
+{
+  if ( songs[currentSong].isPlaying() ) {
+    songs[currentSong].pause();
+  } else if ( songs[currentSong].position() >= songs[currentSong].length()*9/10 ) { //90% of the song
+  songs[currentSong].rewind();
+  songs[currentSong].play();
+ } else {
+   songs[currentSong].play();
+ }
+}//end playpause
+// 
+void mute() 
+{
+  if ( songs[currentSong].isMuted() ) {
+    songs[currentSong].unmute();
+  } else {
+    songs[currentSong].mute();
+  }
+}//end mute
+//
+void stopSong()
+{
+}
 //number keys for each song
 //end main program
  

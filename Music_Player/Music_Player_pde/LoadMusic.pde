@@ -45,7 +45,13 @@
   //
   //printIn("Music Pathway is", musicPathway);
 }//End loadMusic
-void musicFeaturesKeyPressed() {}//end musicfeatureskeypressed
+void musicFeaturesKeyPressed() {
+  //
+  testingMusic();
+  //
+  if ( key=='Q' || key=='q' ) exitProgram();
+  if ( key==CODED || keyCode==ESC ) exitProgram();
+}//end musicfeatureskeypressed
 //
 void musicFeaturesMousePressed() {}//end mousefeaturesmousepressed(){}
 //
