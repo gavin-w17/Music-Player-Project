@@ -53,7 +53,15 @@ void mute()
 //
 void stopSong()
 {
-}
+}//end stopsong
+//
+void fastForward() 
+{
+}//end fastforward
+//
+void fastRewind()
+{
+}//end fastRewind
 //number keys for each song
 //end main program
  
