@@ -6,7 +6,15 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
 void setup() {
+  size( 512, 256, P2D );
+  //
+  //Unique text code
+  textFont(createFont("Serif", 12));
+  //
   musicLoadSetup();
+  //
+  //verifying meta deta, 18 different println's
+  println( "File Name: ", song0MetaData.fileName() );
 }//End setup
 //
 void draw() {
@@ -53,14 +61,22 @@ void mute()
 //
 void stopSong()
 {
+  if ( songs[currentSong].isPlaying() ) {
+    songs[currentSong].pause();
+    songs[currentSong].rewind();
+  } else { 
+    songs[currentSong].rewind();
+  } 
 }//end stopsong
 //
 void fastForward() 
 {
+  if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(1000);
 }//end fastforward
 //
 void fastRewind()
 {
+  if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(-1000);
 }//end fastRewind
 //number keys for each song
 //end main program

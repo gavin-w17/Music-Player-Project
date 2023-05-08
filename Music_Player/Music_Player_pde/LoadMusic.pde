@@ -33,6 +33,7 @@
  minim = new Minim(this);
  //
   songs[0] = minim.loadFile( musicPathway + groove + derefencer + fileExtension );
+  songs[0]MetaData = songs[0].getMetaData();
   songs[1] = minim.loadFile( musicPathway + thesimplest + derefencer + fileExtension );
   songs[2] = minim.loadFile( musicPathway + startyourengines + derefencer + fileExtension );
   songs[3] = minim.loadFile( musicPathway + newsroom + derefencer + fileExtension);
@@ -57,7 +58,7 @@ void musicFeaturesMousePressed() {}//end mousefeaturesmousepressed(){}
 //
 void exitProgram() {
   soundEffects[0].loop(0);
-  delay(2000);
+  delay(900);
   exit();
 }//end exit program
 //
