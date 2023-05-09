@@ -17,6 +17,23 @@ void setup() {
   //
   //verifying meta deta, 18 different println's
   println( "File Name: ", song0MetaData.fileName() );
+  println( "Song Length (in milliseconds): ", song0MetaData.length() );
+  println( "Song Length (in seconds ): ", song0MetaData.length()/1000 );
+  println( "Song Length (in minutes & seconds): ", song0MetaData.length()/1000/60 );
+  println( "Song Title: ", song0MetaData.title() );
+  println( "Author: ", song0MetaData.author() );
+  println( "Composer: ", song0MetaData.composer() );
+  println( "Orchestra: ", song0MetaData.orchestra() );
+  println( "Album: ", song0MetaData.album() );
+  println( "Disk: ", song0MetaData.disc() );
+  println( "Publisher: ", song0MetaData.publisher() );
+  println( "Date Release: ", song0MetaData.date() );
+  println( "Copyright: ", song0MetaData.copyright() );
+  println( "Comment: ", song0MetaData.comment() );
+  println( "Lyrics: ", song0MetaData.lyrics() );
+  println( "Track: ", song0MetaData.track() );
+  println( "Genre: ", song0MetaData.genre() );
+  println( "Encoded: ", song0MetaData.encoded() );
 }//End setup
 //
 void draw() {
