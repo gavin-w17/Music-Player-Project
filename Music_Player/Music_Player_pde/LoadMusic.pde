@@ -4,6 +4,7 @@
   AudioPlayer[] songs = new AudioPlayer[numberOfSongs];
   int numberOfSoundEffects = 2;
   AudioPlayer[] soundEffects = new AudioPlayer[numberOfSoundEffects];
+  AudioMetaData song0MetaData; // soundeffect0, soundeffect1;
   //
   int currentSong = 0;
   //Concatenation of Pathway + File Name
@@ -33,7 +34,7 @@
  minim = new Minim(this);
  //
   songs[0] = minim.loadFile( musicPathway + groove + derefencer + fileExtension );
-  songs[0]MetaData = songs[0].getMetaData();
+  song0MetaData = songs[0].getMetaData();
   songs[1] = minim.loadFile( musicPathway + thesimplest + derefencer + fileExtension );
   songs[2] = minim.loadFile( musicPathway + startyourengines + derefencer + fileExtension );
   songs[3] = minim.loadFile( musicPathway + newsroom + derefencer + fileExtension);

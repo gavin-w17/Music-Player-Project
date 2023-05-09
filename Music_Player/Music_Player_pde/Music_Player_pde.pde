@@ -5,6 +5,8 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
+//global variables
+//
 void setup() {
   size( 512, 256, P2D );
   //
